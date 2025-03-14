@@ -10,8 +10,8 @@ export default function Multiplicador() {
   const [textoInput2, setTextoInput2] = useState('')
 
   function pegaNome(texto, vari) {
-    if(/^\d+$/.test(texto)) {
-      vari(+texto)
+    if(texto === '' || /^\d+$/.test(texto)) {
+      vari(texto)
     }
     else {
       alert("Digite um número!")
@@ -20,7 +20,12 @@ export default function Multiplicador() {
   }
 
   function multiplicar() {
-    setResultado(textoInput1*textoInput2);
+    if ((textoInput1 != '') && (textoInput2 != '')) {
+      setResultado(+textoInput1*+textoInput2);
+    }
+    else {
+      alert("Digite um número!")
+    }
     //setResultado(String(textoInput1).repeat(+textoInput2))
   }
 
