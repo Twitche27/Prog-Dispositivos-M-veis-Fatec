@@ -2,10 +2,10 @@ import React from 'react';
 import { Button, View } from 'react-native';
 import styles from './styles';
 
-function Botao({ titulo, onPress, corBotao }) {
+function Botao(props) {
   return (
     <View style={styles.botaoContainer}>
-      <Button title={titulo} onPress={onPress} color = {corBotao} />
+      <Button title={props.titulo} onPress={props.onPress} color = {props.corBotao} />
     </View>
   );
 }
